@@ -9,11 +9,7 @@ Oodering is a restaurant kiosk system designed to enhance the dining experience 
 - [Features](#features)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running the Application](#running-the-application)
-- [Contributing](#contributing)
-- [Future Roadmap](#future-roadmap)
-- [License](#license)
+  - [Installation](#installation)  
 
 ## Overview
 
@@ -59,4 +55,4 @@ Oodering provides a comprehensive solution for restaurant management, including 
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/Oodering.git
+   git clone https://github.com/Gayan-98/Oodering.git
