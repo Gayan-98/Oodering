@@ -1,6 +1,6 @@
 # Oodering -Restaurant Kiosk System
 
-Oodering is a restaurant kiosk system designed to enhance the dining experience for both customers and restaurant owners. The system leverages React.js with Chakra UI for the client application and Spring Boot with Spring Web, Security, and Spring Cloud for the backend.
+Oodering is a restaurant kiosk system designed to enhance the dining experience for both customers and restaurant owners. The system leverages React.js with Chakra UI for the client application and Spring Boot with Spring Web, Security, and Spring Cloud for the backend.PostgreSQL is used as the database.
 
 
 ## Table of Contents
@@ -50,6 +50,7 @@ Oodering provides a comprehensive solution for restaurant management, including 
 
 - Node.js and npm for the React.js client application.
 - Java Development Kit (JDK) 18 for running the Spring Boot backend.
+- PostgreSQL database.
 
 ### Installation
 
