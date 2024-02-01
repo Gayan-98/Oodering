@@ -1,4 +1,4 @@
-<img src="client/welcome.png" alt="Dashboard" width="1500" hight="1500"/> 
+<img src="client/welcome.png" alt="Dashboard" width="750" hight="750"/> 
 
 # Oodering -Restaurant Kiosk System
 
