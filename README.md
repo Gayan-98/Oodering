@@ -1,7 +1,7 @@
 <img src="client/welcome.png" alt="Dashboard" width="950" hight="200"/> 
 
-                   # Oodering 
-              ##Restaurant Kiosk System
+# <p align="center">Oodering</p>
+## <p align="center">Restaurant Kiosk System</p>
 
 Oodering is a restaurant kiosk system designed to enhance the dining experience for both customers and restaurant owners. The system leverages React.js with Chakra UI for the client application and Spring Boot with Spring Web, Security, and Spring Cloud for the backend.PostgreSQL is used as the database.
 
