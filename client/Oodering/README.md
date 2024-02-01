@@ -1,3 +1,5 @@
+<img src="client/Oodering/public/odering welcome.png" alt="welcome" width="150"/>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
