@@ -1,4 +1,4 @@
-#<img src="client/Oodering/public/odering welcome.png" alt="welcome" width="150"/>
+#<img src="client/public/odering welcome.png" alt="welcome" width="150"/>
 
 # Getting Started with Create React App
 
