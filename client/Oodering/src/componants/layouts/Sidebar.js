@@ -26,7 +26,7 @@ const items = [
   {
     id: 1,
     name: <><BsListCheck /> Inventory</>,
-    path: "/",
+    path: "/admin/inventory",
   },
   {
     id: 2,

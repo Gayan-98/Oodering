@@ -2,6 +2,7 @@ import "./App.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+
 import { Toaster } from "react-hot-toast";
 // import Register from "./pages/Register";
 // import Login from "./pages/Login";
@@ -12,6 +13,8 @@ import Items from "./pages/Items";
 import ItemForm from "./pages/ItemForm";
 import Orders from "./pages/Orders";
 import Welcome from "./pages/Welcome";
+import Inventory from "./pages/Inventory/Inventory";
+import AddInventoryItems from "./pages/Inventory/AddInventoryItems";
 
 function App() {
   return (
@@ -59,8 +62,25 @@ function App() {
                 </AdminLayout>
               }
             />
-           
 
+
+              <Route
+                  path="/admin/inventory"
+                  element={
+                      <AdminLayout>
+                          <Inventory />
+                      </AdminLayout>
+                  }
+              />
+
+              <Route
+                  path="/admin/inventory/add"
+                  element={
+                      <AdminLayout>
+                          <AddInventoryItems />
+                      </AdminLayout>
+                  }
+              />
             <Route
               path="/admin/orders"
               element={

@@ -1,0 +1,385 @@
+#add_btn {
+    text-decoration: none;
+    padding: 8px;
+    margin-top: 20px;
+    margin-left: 0px;
+    border-radius: 5px;
+    float: left;
+    font-size: 15px;
+    margin-right: 550px;
+    color: rgb(254, 255, 254);
+    background-color: rgb(11, 84, 20);
+
+}
+
+.deleteBtn {
+    background-color: #f18f7f;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 5px;
+}
+
+.updateBtn {
+    background-color: #85d4af;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#report_btn {
+    text-decoration: none;
+    padding: 8px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    float: right;
+    width: 110px;
+    font-size: 15px;
+    color: rgb(254, 255, 254);
+    background-color: rgb(11, 84, 20);
+}
+
+#search {
+    float: right;
+    margin-top: 20px;
+    margin-right: 35px;
+    background-color: white;
+    width: 260px;
+    border-radius: 12px;
+}
+
+#search input {
+    resize: none;
+    height: 45px;
+    border: solid 3px rgb(225, 225, 241);
+    border-radius: 12px;
+}
+
+.top,
+.bottom {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding: 35px;
+}
+
+.details {
+    margin-top: 0px;
+    padding: 30px;
+}
+
+.table th {
+    color: #210c65;
+    padding-left: 5px;
+    text-align: center;
+}
+
+.table {
+    font-size: 13px;
+    padding: 60px;
+}
+
+.nav-item {
+    padding: 10px;
+}
+
+::placeholder {
+    font-size: 13px;
+    margin: 0px;
+}
+
+.itemImage {
+    width: 70px;
+    height: 80px;
+}
+
+.formContent {
+    margin: 10px;
+    margin-left: 80px;
+}
+
+.formInput {
+    width: 450px;
+    height: 30px;
+    border-radius: 4px;
+    border: solid 1px;
+    border-color: hwb(0 71% 24%);
+    margin-bottom: 5px;
+}
+
+.vehicleInput {
+    width: 450px;
+    height: 30px;
+    border-radius: 4px;
+    border: solid 1px;
+    border-color: hwb(0 71% 24%);
+    margin-bottom: 5px;
+}
+
+.form_head {
+    font-size: 32px;
+    padding: 30px;
+    margin-left: 10px;
+}
+
+.form-label {
+    font-size: 16px;
+}
+
+#viewbtn {
+    margin-left: 10px;
+    background-color: #85d4af;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 1px 3px 1px 3px;
+}
+
+.table td {
+    text-align: center;
+}
+
+.backBtn {
+    background-color: #f18f7f;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 20px;
+    width: 70px;
+}
+
+.preview_img {
+    width: 120px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.uploadbtn {
+    outline: none;
+    font-size: 14px;
+    font-weight: bold;
+    background: transparent;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 2px;
+    cursor: pointer;
+    height: 50px;
+}
+
+.Tot {
+    font-size: large;
+    background-color: #E4E9F7;
+    border-radius: 20px;
+    box-shadow: rgb(12, 12, 12);
+    width: 800px;
+    margin-left: 200px;
+    padding: 8px;
+    text-align: center;
+
+}
+
+.bottom {
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgb(12, 12, 12);
+    width: 1000px;
+    margin-left: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.tableBody {
+    height: 315px;
+    overflow: auto;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    background-color: #e4e9f7;
+    z-index: 1;
+}
+
+h3 {
+    margin-bottom: 30px;
+}
+
+.profileButtons {
+    margin-top: 100px;
+    margin-left: 100px;
+    display: flex;
+    gap: 800px;
+}
+
+#myTable{
+    margin:auto;
+}
+
+
+.reportHead1{
+    text-align: center;
+    color:#cfa80e ;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 300;
+}
+
+.reportHead2{
+    text-align: center;
+}
+
+.printBtn{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    width:60px;
+    background-color: #210c65;
+    color: white;
+    padding:5px;
+    border-radius: 5px;
+}
+
+#reportContainer{
+    margin-top: 0px;
+    padding:5px;
+    background-color:white;
+}
+
+#myTable{
+    margin: auto;
+    font-size: 13px;
+    padding:10px;
+
+}
+
+#myTable th{
+    color: #210c65;
+    text-align: center;
+    padding:10px;
+    border: 1.5px solid black;
+}
+
+#myTable td{
+    text-align: center;
+    padding:10px;
+    border: 1.5px solid black;
+}
+
+.generateBtn{
+    background-color: #85d4af;
+    color: black;
+    font-family: "Poppins" , sans-serif;
+    border:none;
+    padding: 6px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.reportInput{
+    width:200px;
+    height:32px;
+    border-radius: 4px;
+    border: solid 1px;
+    border-color: hwb(0 71% 24%);
+    margin-bottom: 5px;
+}
+
+#monthReport{
+    margin-bottom: 30px;
+}
+
+.reportBackBtn{
+    margin-left: 30px;
+    background-color:#f18f7f;
+    color: black;
+    font-family: "Poppins" , sans-serif;
+    border:none;
+    padding: 7px 10px 7px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.error{
+    font-family: "Poppins" , sans-serif;
+    font-size: 17px;
+    color:#ad4739;
+    margin-top: 40px;
+    text-align:start;
+}
+
+
+#cus{
+    width:500px;
+    height: 340px;
+    margin:auto;
+    background-color:rgb(158, 210, 186);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+#cus h3{
+    text-align: center;
+}
+
+#cus span{
+    margin-left:20px;
+}
+
+#cus p{
+    font-size:16px;
+}
+
+.profileButtons {
+    margin-top: 80px;
+    margin-left: 300px;
+    display: flex;
+    gap: 200px;
+}
+
+#place_btn {
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-top: 30px;
+    float: left;
+    font-size: 22px;
+    height: 50px;
+    width: 300px;
+    color: rgb(254, 255, 254);
+    background-color: rgb(11, 84, 20);
+}
+
+.profile_table {
+    margin-top: 50px;
+    margin-left: 100px;
+    font-size: 20px;
+    text-align: center;
+    width: 1000px;
+    background-color: white;
+    border-radius: 20px;
+    border-color: black;
+    box-shadow: rgb(12, 12, 12);
+}
+
+.profile_table td {
+    height: 50px;
+    width: 200px;
+}
+
+.profile_table tr:hover {background-color: #E4E9F7;}
