@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "image3")
+@Table(name = "product")
 public class Product {
 
     @Id

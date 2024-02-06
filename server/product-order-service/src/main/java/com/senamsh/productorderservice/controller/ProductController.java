@@ -1,20 +1,22 @@
 package com.senamsh.productorderservice.controller;
 
 
+import com.senamsh.productorderservice.dto.ProductRequest;
 import com.senamsh.productorderservice.dto.ProductResponse;
 import com.senamsh.productorderservice.model.Product;
 import com.senamsh.productorderservice.service.ProductService;
+import jakarta.ws.rs.NotFoundException;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+
 
 import java.io.IOException;
-import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+
 
 @AllArgsConstructor
 @RestController
@@ -24,54 +26,36 @@ public class ProductController {
 
     private final ProductService productService;
 
+    //testing endpoint
     @GetMapping("/test")
     public  String get(){
         return "ok";
-
     }
+
+
     @PostMapping("/item/add")
-    public ResponseEntity<Map<String, Object>> addProduct(
-            @RequestParam("image") MultipartFile file,
-            @RequestParam("name") String name,
-            @RequestParam("price") int price) {
+    public ResponseEntity<Map<String, Object>> addProduct(@ModelAttribute ProductRequest request) {
+
         try {
-            // Validate parameters
-            if (file.isEmpty() || name.isEmpty() ) {
-                return ResponseEntity.badRequest().body(buildErrorResponse("Invalid input parameters"));
-            }
-
-            // Convert the MultipartFile to byte[]
-            byte[] data = file.getBytes();
-
-            // Create a new Product object with the image data and name
-            Product product = new Product();
-            product.setDat(data);
-            product.setName(name);
-            product.setPric(price);
-
-            // Save the product
-            Product saved = productService.saveProduct(product);
-
+            Product saved = productService.saveProduct(request);
             Map<String, Object> response = new HashMap<>();
             response.put("id", saved.getId());
             return ResponseEntity.ok(response);
-        } catch (IOException e) {
 
+        } catch (IOException e) {
             return ResponseEntity.status(500).body(buildErrorResponse("Error saving product"));
         }
     }
 
+
     @GetMapping("/item/{id}")
     public ResponseEntity<ProductResponse> getProduct(@PathVariable Long id) {
-        Product product = productService.getProductById(id);
-        if (product != null) {
-            ProductResponse response = new ProductResponse();
-            response.setId(id);
-            response.setDat(encodeBase64(product.getDat()));
-            response.setName(product.getName());
-            response.setPric(product.getPric());
-            return ResponseEntity.ok(response);
-        } else {
+
+        try {
+            ProductResponse productResponse= productService.getProductById(id);
+            return ResponseEntity.ok(productResponse);
+
+        }catch ( NotFoundException e){
             return ResponseEntity.notFound().build();
         }
     }
@@ -81,24 +65,17 @@ public class ProductController {
 
     @GetMapping("/item/all")
     public ResponseEntity<List<ProductResponse>> getAllProducts() {
-        List<Product> products = productService.getAllProducts();
 
+        try {
+            List<ProductResponse> productResponse= productService.getAllProducts();
+            return ResponseEntity.ok(productResponse);
 
-        List<ProductResponse> productResponses = products.stream()
-                .map(product -> new ProductResponse(product.getId(), product.getName(), encodeBase64(product.getDat()), product.getPric()))
-                .collect(Collectors.toList());
-
-        return ResponseEntity.ok(productResponses);
-    }
-
-    // encode byte array to Base64
-    private String encodeBase64(byte[] data) {
-        if (data != null) {
-            return Base64.getEncoder().encodeToString(data);
-        } else {
-            return "";
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+
 
 
 
@@ -114,46 +91,22 @@ public class ProductController {
 
 
 
+
+
     @PutMapping("/item/edit/{id}")
-    public ResponseEntity<Map<String, Object>> editProduct(
-            @PathVariable Long id,
-            @RequestParam(value = "image", required = false) MultipartFile file,
-            @RequestParam(value = "name", required = false) String name,
-            @RequestParam(value = "price", required = false) String price) {
+    public ResponseEntity<Map<String, Object>> editProduct(@PathVariable Long id, @ModelAttribute ProductRequest request) {
+
         try {
-            // Validate parameters
-            if (id == null || (file == null && name == null && price == null)) {
-                return ResponseEntity.badRequest().body(buildErrorResponse("Invalid input parameters"));
-            }
-
-            // Retrieve the existing product
-            Product existingProduct = productService.getProductById(id);
-            if (existingProduct == null) {
-                return ResponseEntity.notFound().build();
-            }
-
-            // Update the product fields if new values are provided
-            if (file != null) {
-                existingProduct.setDat(file.getBytes());
-            }
-            if (name != null) {
-                existingProduct.setName(name);
-            }
-            if (price != null) {
-                existingProduct.setPric(Integer.parseInt(price));
-            }
-
-            // Save the updated product
-            Product updatedProduct = productService.saveProduct(existingProduct);
-
+            Product updatedProduct = productService.saveOrUpdateProduct(id, request);
             Map<String, Object> response = new HashMap<>();
             response.put("id", updatedProduct.getId());
             return ResponseEntity.ok(response);
+
+
         } catch (IOException e) {
             return ResponseEntity.status(500).body(buildErrorResponse("Error updating product"));
         }
     }
-
 
 
 
